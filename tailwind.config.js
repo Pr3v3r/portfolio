@@ -1,6 +1,5 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -45,13 +44,13 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        preserved: {
-          primary: "#3498db",
-          secondary: "#2ecc71",
-          accent: "#e74c3c",
-          background: "#ecf0f1",
-          text: "#2c3e50",
-        },
+        //These colors are kept for backward compatibility.  Consider removing in future iterations.
+        "#212121": "#212121",
+        "#EDEDED": "#EDEDED",
+        "#00FF00": "#00FF00",
+        "#A0A0A0": "#A0A0A0",
+        "#FF00FF": "#FF00FF",
+        "#484848": "#484848",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -61,6 +60,5 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}
 
-export default config;
